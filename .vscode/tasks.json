@@ -1,0 +1,51 @@
+{
+  // Cmd+Shift+B runs the default build task. Others: Cmd+Shift+P → "Tasks: Run Task".
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build (release)",
+      "type": "shell",
+      "command": "make -j8",
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "build (debug)",
+      "type": "shell",
+      "command": "make debug -j8",
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "run tests",
+      "type": "shell",
+      "command": "make test",
+      "group": { "kind": "test", "isDefault": true },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "run demo",
+      "type": "shell",
+      "command": "make run",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "run benchmarks",
+      "type": "shell",
+      "command": "make bench",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "tests under AddressSanitizer",
+      "type": "shell",
+      "command": "make asan",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "tests under ThreadSanitizer",
+      "type": "shell",
+      "command": "make tsan",
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}

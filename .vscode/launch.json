@@ -1,0 +1,23 @@
+{
+  // F5 to debug. Requires the "CodeLLDB" extension (vadimcn.vscode-lldb),
+  // which is the best debugger for clang on macOS.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug demo",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/debug/demo",
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "build (debug)"
+    },
+    {
+      "name": "Debug unit tests",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/debug/unit_tests",
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "build (debug)"
+    }
+  ]
+}
